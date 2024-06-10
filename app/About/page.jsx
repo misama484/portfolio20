@@ -303,7 +303,7 @@ const About = () => {
                 <h2 className="text-4xl font-bold">{experience.title}</h2>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
               </div>
-              <ScrollArea className="h-[500px]">
+              <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                 {experience.items.map((item, index) => {
                   return(
@@ -336,7 +336,7 @@ const About = () => {
                 <h2 className="text-4xl font-bold">{education.title}</h2>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
               </div>
-              <ScrollArea className="h-[500px]">
+              <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                 {education.items.map((item, index) => {
                   return(
@@ -357,10 +357,10 @@ const About = () => {
             {/* skills */}
             <TabsContent value="skills" className="w-full ">
             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h2 className="text-4xl font-bold">Skills adquiridas</h2>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">Skills adquiridas en mi desarrollo profesional, tanto en los estudios como en el ambito autodidacta</p>
-              </div> 
-              <div className="h-[500px] mb-20">
+                <h2 className="text-4xl font-bold">{education.title}</h2>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
+            </div>
+              <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                 {skillsList.map((skill, index) => {
                     return(
@@ -369,10 +369,20 @@ const About = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                           {skill.skills.map((item, index) => {
                             return(
-                              <div key={index} className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 items-center gap-2 hover:text-accent">
-                                <div className="w-12 h-12 rounded-full bg-[#232329] text-accent flex items-center justify-center gap-2">{item.image}</div>
-                                <p className="p-3 text-center">{item.name}</p>
-                              </div>
+                              <li key={index}>
+                                <TooltipProvider delayDuration={100}>
+                                  <Tooltip>
+                                    <TooltipTrigger>
+                                      <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                        {item.image}
+                                      </div>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p className="text-center">{item.name}</p>
+                                    </TooltipContent>
+                                  </Tooltip>
+                                </TooltipProvider>
+                              </li>
                             )
                           })}
                         </div>
@@ -380,7 +390,7 @@ const About = () => {
                     )
                   })}
                 </ul>
-              </div>              
+              </ScrollArea>              
             </TabsContent>
 
             {/* about */}
@@ -424,4 +434,26 @@ export default About
 
                 </div>
 
+                ----------------------
+                <ScrollArea className="h-[800px]">
+                <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                {skillsList.map((skill, index) => {
+                    return(
+                      <div key={index} className="flex flex-col gap-4 h-auto">
+                        <h2 className="text-4xl font-bold my-10 text-center lg:text-left text-accent">{skill.title}</h2>
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                          {skill.skills.map((item, index) => {
+                            return(
+                              <div key={index} className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 items-center gap-2 hover:text-accent">
+                                <div className="w-12 h-12 rounded-full bg-[#232329] text-accent flex items-center justify-center gap-2">{item.image}</div>
+                                <p className="p-3 text-center">{item.name}</p>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    )
+                  })}
+                </ul>
+              </ScrollArea>
 */
