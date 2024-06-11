@@ -1,8 +1,10 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, FaRegUser, FaMobileAlt, FaRocket, FaMapMarkedAlt, } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeXml } from "react-icons/tb";
+import { MdAlternateEmail } from "react-icons/md";
+import { LuLanguages } from "react-icons/lu";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea,  } from "@/components/ui/scroll-area";
@@ -16,24 +18,34 @@ const about = {
   description: "Soy un desarrollador junior apasionado de la informática y la tecnología, siempre me gusto saber como funcionan las cosas e intentar mejorarlas o adaptarlas a mis necesidades. Hace unos años me interesé por la programación y descubrí una nueva pasión, así que decidí dedicarme a ella al completo.",
   info: [
     {
-      fieldName: "Name",
+      fieldName: "Nombre",
       fieldValue: "Miguel Sánchez",
-    },
-    {
-      fieldName: "Telefono",
-      fieldValue: "666111222",
+      icon: <FaRegUser />
     },
     {
       fieldName: "Experiencia",
       fieldValue: "3+ años",
+      icon: <FaRocket />
+    },
+    {
+      fieldName: "Telefono",
+      fieldValue: "666111222",
+      icon: <FaMobileAlt />
     },
     {
       fieldName: "Email",
       fieldValue: "miguelsanchez.dev@gmail.com",
+      icon: <MdAlternateEmail />
+    },
+    {
+      fieldName: "Ubicación",
+      fieldValue: "Valencia, España",
+      icon: <FaMapMarkedAlt />
     },
     {
       fieldName: "Idiomas",
       fieldValue: "Ingles, Castellano, Valenciano",
+      icon: <LuLanguages />
     },
   ],
 }
@@ -372,7 +384,7 @@ const About = () => {
                               <li key={index}>
                                 <TooltipProvider delayDuration={100}>
                                   <Tooltip>
-                                    <TooltipTrigger>
+                                    <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                                       <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                         {item.image}
                                       </div>
@@ -394,8 +406,26 @@ const About = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full">
-              Sobre mi
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return(
+                      <li key={index} className="flex items-center gap-3">
+                        <span className="w-10 h-10 rounded-full bg-[#232329] text-accent flex items-center justify-center">
+                          {item.icon}
+                        </span>
+                        <div>
+                          <h4 className="text-md font-semibold text-white/60">{item.fieldName}</h4>
+                          <p className="text-sx font-bold text-white">{item.fieldValue}</p>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
