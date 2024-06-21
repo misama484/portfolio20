@@ -28,6 +28,10 @@ const links = [
     name: "Login",
     path: "/Login",
   },
+  {
+    name:"AdminPage", 
+    path:"/AdminPage",
+  },
 ]
 
 const Nav = () => {
