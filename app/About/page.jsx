@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, FaRegUser, FaMobileAlt, FaRocket, FaMapMarkedAlt, } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeXml } from "react-icons/tb";
@@ -10,6 +10,11 @@ import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/comp
 import { ScrollArea,  } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+//FIREBASE
+import { doc, getDoc, setDoc, getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../Database/FirebaseConfig';
 
 
 {/* datos */}
@@ -164,6 +169,8 @@ const education = {
 ],
 };
 
+
+
 export const skillsList = [ 
   {
     title: "Frontend",
@@ -288,9 +295,12 @@ export const skillsList = [
   }
 ];
 
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
 
 const About = () => {
+  const [data, setData] = useState(null);
   return (
     <motion.div initial={{opacity:0}} animate={{
       opacity: 1,
