@@ -24,6 +24,14 @@ const links = [
     name: "contacto",
     path: "/Contact",
   },
+  {
+    name: "Login",
+    path: "/Login",
+  },
+  {
+    name:"AdminPage", 
+    path:"/AdminPage",
+  },
 ]
 
 const Nav = () => {
