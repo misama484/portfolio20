@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, FaRegUser, FaMobileAlt, FaRocket, FaMapMarkedAlt, } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeXml } from "react-icons/tb";
@@ -295,12 +295,31 @@ export const skillsList = [
   }
 ];
 
-const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app);
+
 
 
 const About = () => {
   const [data, setData] = useState(null);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const [aboutDb, setAboutDb] = useState([]);
+
+  //useEffect que retorna los datos de About de la bd
+  useEffect(() => {
+    const fetchAbout = async() => {
+      const querySnapshot = await getDocs(collection(db, "PortfolioDB"));
+      const arrayAbout = [];
+      querySnapshot.forEach((doc) => {
+        arrayAbout.push({...doc.data()});
+    });
+    setAboutDb(arrayAbout);
+    //console.log(arrayAbout);
+  };
+  fetchAbout();
+  
+  }, []);
+
   return (
     <motion.div initial={{opacity:0}} animate={{
       opacity: 1,
@@ -435,6 +454,19 @@ const About = () => {
                     )
                   })}
                 </ul>
+                {/* ------ */}
+                <div>
+                  <h2>Datos de la Colección</h2>
+                  <div>
+                    {aboutDb.map((item) => (
+                      <p key={""}>
+                        {/* Muestra aquí los datos que quieras de tu colección */}
+                        {item.name} - {item.description} {/* Asume que tus documentos tienen 'nombre' y 'descripcion' */}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                {/* ------ */}
               </div>
             </TabsContent>
           </div>
