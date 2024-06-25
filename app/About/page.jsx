@@ -314,7 +314,7 @@ const About = () => {
       querySnapshot.forEach((doc) => {
         arrayExperience.push({...doc.data()});
     });
-    setExperienceDb(arrayAbout);
+    setExperienceDb(arrayExperience);
     //console.log(arrayAbout);
   };
   fetchExperience();
@@ -370,6 +370,7 @@ const About = () => {
                 </ul>
 
                 {/* FirebaseBlockData */}
+                <div> Bloque de Firebase </div>
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                 {experienceDb.map((item, index) => {
                   return(
