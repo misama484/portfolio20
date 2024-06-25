@@ -367,6 +367,31 @@ const About = () => {
                     </li>
                     )})}
                 </ul>
+
+                {/* FirebaseBlockData */}
+                <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                {experience.items.map((item, index) => {
+                  return(
+                    <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
+                      <span className="text-accent">{item.date}</span>
+                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
+                      <p className="text-white/60 text-center lg:text-left">{item.company}</p>
+                      <div>
+                        {/* dot */}
+                        {item.functions.map((func, index) => {
+                          return(
+                            <div key={index} className="flex items-center gap-2">
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <p>{func}</p>
+                            </div>
+                        )
+                        })}
+                        
+                      </div>
+                    </li>
+                    )})}
+                </ul>
+                {/* ENDFirebaseBlockData */}
               </ScrollArea>
             
             </TabsContent>

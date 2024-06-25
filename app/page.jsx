@@ -37,7 +37,7 @@ const Home = () => {
   fetchAbout();
   
   }, []);
-
+  
 
   return (
     <section className="h-full">
@@ -57,9 +57,7 @@ const Home = () => {
               }}
             />
             <h1 className="h1 mb-6">Hola! soy<br /><span className="text-accent">{item.name}</span></h1>
-            <p className="max-w-[500px] mb-9 text-white/80">{item.description}</p>
-            
-            
+            <p className="max-w-[500px] mb-9 text-white/80">{item.description}</p>           
           
             {/* boton y RRSS */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
