@@ -304,19 +304,20 @@ const About = () => {
   const db = getFirestore(app);
 
   const [aboutDb, setAboutDb] = useState([]);
+  const [experienceDb, setExperienceDb] = useState([]);
 
   //useEffect que retorna los datos de About de la bd
   useEffect(() => {
-    const fetchAbout = async() => {
-      const querySnapshot = await getDocs(collection(db, "PortfolioDB"));
-      const arrayAbout = [];
+    const fetchExperience = async() => {
+      const querySnapshot = await getDocs(collection(db, "ExperienciaLaboral"));
+      const arrayExperience = [];
       querySnapshot.forEach((doc) => {
-        arrayAbout.push({...doc.data()});
+        arrayExperience.push({...doc.data()});
     });
-    setAboutDb(arrayAbout);
+    setExperienceDb(arrayAbout);
     //console.log(arrayAbout);
   };
-  fetchAbout();
+  fetchExperience();
   
   }, []);
 
@@ -370,15 +371,15 @@ const About = () => {
 
                 {/* FirebaseBlockData */}
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {experience.items.map((item, index) => {
+                {experienceDb.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.date}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
-                      <p className="text-white/60 text-center lg:text-left">{item.company}</p>
+                      <span className="text-accent">{item.FechaInicio}</span>
+                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.Puesto}</h3>
+                      <p className="text-white/60 text-center lg:text-left">{item.Nombre}</p>
                       <div>
                         {/* dot */}
-                        {item.functions.map((func, index) => {
+                        {item.Funciones.map((func, index) => {
                           return(
                             <div key={index} className="flex items-center gap-2">
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
