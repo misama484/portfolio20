@@ -306,7 +306,7 @@ const About = () => {
   const [aboutDb, setAboutDb] = useState([]);
   const [experienceDb, setExperienceDb] = useState([]);
   const [educationDb, setEducationDb] = useState([]);
-
+  
   //useEffect que retorna los datos de Experiencia Laboral de la bd
   useEffect(() => {
     const fetchExperience = async() => {
@@ -327,6 +327,17 @@ const About = () => {
     setEducationDb(arrayEducation);
     console.log(arrayEducation);
   };
+  
+    const fetchAbout = async() => {
+      const querySnapshot = await getDocs(collection(db, "PortfolioDB"));
+      const arrayAbout = [];
+      querySnapshot.forEach((doc) => {
+        arrayAbout.push({...doc.data()});
+    });
+    setAboutDb(arrayAbout);
+    //console.log(arrayAbout);
+  };
+  fetchAbout();
   fetchExperience();
   fetchEducation();
   
@@ -356,32 +367,7 @@ const About = () => {
                 <h2 className="text-4xl font-bold">{experience.title}</h2>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
               </div>
-              <ScrollArea className="h-[800px]">
-                <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {experience.items.map((item, index) => {
-                  return(
-                    <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.date}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
-                      <p className="text-white/60 text-center lg:text-left">{item.company}</p>
-                      <div>
-                        {/* dot */}
-                        {item.functions.map((func, index) => {
-                          return(
-                            <div key={index} className="flex items-center gap-2">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p>{func}</p>
-                            </div>
-                        )
-                        })}
-                        
-                      </div>
-                    </li>
-                    )})}
-                </ul>
-
-                {/* FirebaseBlockData */}
-                <div> Bloque de Firebase </div>
+              <ScrollArea className="h-[800px]">                
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                 {experienceDb.map((item, index) => {
                   return(
@@ -404,9 +390,7 @@ const About = () => {
                     </li>
                     )})}
                 </ul>
-                {/* ENDFirebaseBlockData */}
-              </ScrollArea>
-            
+              </ScrollArea>            
             </TabsContent>
 
             {/* education */}
@@ -417,16 +401,30 @@ const About = () => {
               </div>
               <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {education.items.map((item, index) => {
+                {educationDb.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.date}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
-                      <div key={index} className="flex items-center gap-2">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-white/60 text-center lg:text-left">{item.school}</p>
-                            </div>
-                      
+                      <div className="flex justify-between items-center w-full">
+                        <div className="flex-1">
+                          <span className="text-accent">{item.fechas}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.nombre}</h3>
+                          <div key={index} className="flex items-center gap-2">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60 text-center lg:text-left">{item.origen}</p>
+                          </div>
+                      </div>
+                      <div>
+                        <Image 
+                          src={item.urlImagen} 
+                          alt="foto" 
+                          //layout="fill" 
+                          width={100}
+                          height={100}
+                          priority 
+                          quality={100} 
+                          className="object-contain" />
+                        </div>
+                      </div>                     
                     </li>
                     )})}
                 </ul>
@@ -491,20 +489,7 @@ const About = () => {
                       </li>
                     )
                   })}
-                </ul>
-                {/* ------ */}
-                <div>
-                  <h2>Datos de la Colección</h2>
-                  <div>
-                    {aboutDb.map((item) => (
-                      <p key={""}>
-                        {/* Muestra aquí los datos que quieras de tu colección */}
-                        {item.name} - {item.description} {/* Asume que tus documentos tienen 'nombre' y 'descripcion' */}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                {/* ------ */}
+                </ul>                
               </div>
             </TabsContent>
           </div>
@@ -566,4 +551,21 @@ export default About
                   })}
                 </ul>
               </ScrollArea>
+
+              ----------------------
+              {EDUCATION}
+              <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                {education.items.map((item, index) => {
+                  return(
+                    <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
+                      <span className="text-accent">{item.date}</span>
+                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
+                      <div key={index} className="flex items-center gap-2">
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <p className="text-white/60 text-center lg:text-left">{item.school}</p>
+                            </div>
+                      
+                    </li>
+                    )})}
+                </ul>
 */
