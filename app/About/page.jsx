@@ -305,8 +305,9 @@ const About = () => {
 
   const [aboutDb, setAboutDb] = useState([]);
   const [experienceDb, setExperienceDb] = useState([]);
+  const [educationDb, setEducationDb] = useState([]);
 
-  //useEffect que retorna los datos de About de la bd
+  //useEffect que retorna los datos de Experiencia Laboral de la bd
   useEffect(() => {
     const fetchExperience = async() => {
       const querySnapshot = await getDocs(collection(db, "ExperienciaLaboral"));
@@ -315,11 +316,21 @@ const About = () => {
         arrayExperience.push({...doc.data()});
     });
     setExperienceDb(arrayExperience);
-    //console.log(arrayAbout);
+    //console.log(arrayEducation);
+  }
+    const fetchEducation = async() => {
+      const querySnapshot = await getDocs(collection(db, "ExperienciaAcademica"));
+      const arrayEducation = [];
+      querySnapshot.forEach((doc) => {
+        arrayEducation.push({...doc.data()});
+    });
+    setEducationDb(arrayEducation);
+    console.log(arrayEducation);
   };
   fetchExperience();
+  fetchEducation();
   
-  }, []);
+  },[]);
 
   return (
     <motion.div initial={{opacity:0}} animate={{
@@ -375,8 +386,8 @@ const About = () => {
                 {experienceDb.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.FechaInicio}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.Puesto}</h3>
+                      <span className="text-accent">{item.FechaInicio} -- {item.FechaFin}</span>
+                      <h3 className="text-xl max-w-[360px] min-h-[50px] text-center lg:text-left">{item.Puesto}</h3>
                       <p className="text-white/60 text-center lg:text-left">{item.Nombre}</p>
                       <div>
                         {/* dot */}
