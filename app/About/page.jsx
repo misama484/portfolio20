@@ -325,7 +325,7 @@ const About = () => {
         arrayEducation.push({...doc.data()});
     });
     setEducationDb(arrayEducation);
-    console.log(arrayEducation);
+    //console.log(arrayEducation);
   };
   
     const fetchAbout = async() => {
@@ -341,7 +341,7 @@ const About = () => {
   fetchExperience();
   fetchEducation();
   
-  },[]);
+  });
 
   return (
     <motion.div initial={{opacity:0}} animate={{

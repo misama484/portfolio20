@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 import Link from "next/link";
 import {TooltipProvider, Tooltip, TooltipTrigger, TooltipContent} from "../../components/ui/tooltip";
@@ -8,6 +8,11 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import WorkSliderBtns from "../../components/ui/WorkSliderBtns"
+
+//FIREBASE
+import { doc, getDoc, setDoc, getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../Database/FirebaseConfig';
 
 const projects = [
   {
@@ -267,16 +272,32 @@ const projects = [
 ];
 
 const Work = () => {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
   const [project, setProject] = useState(projects[0]);
+  const [projectsDb, setProjectsDb] = useState([]);
 
   const handleSlideChange = (swiper) => {
     //get current slide index
     const currentIndex = swiper.activeIndex;
     // update project state based on current slide index
     setProject(projects[currentIndex]);
-
-
   }
+
+  useEffect(() => {
+    const fetchProjects = async() => {
+      const querySnapshot = await getDocs(collection(db, "Proyectos"));
+      const arrayProjects = [];
+      querySnapshot.forEach((doc) => {
+        arrayProjects.push({...doc.data()});
+    });
+    setProjectsDb(arrayProjects);
+    console.log(arrayProjects);
+  }
+  fetchProjects();
+  });
+
+
 
   return (
     <motion.section
