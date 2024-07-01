@@ -269,14 +269,28 @@ const projects = [
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
+  const [ projectsDb, SetProjectsDb ] = useState([]);
+
   const handleSlideChange = (swiper) => {
     //get current slide index
     const currentIndex = swiper.activeIndex;
     // update project state based on current slide index
     setProject(projects[currentIndex]);
-
-
   }
+
+  useEffect(() => {
+    const fetchWorks = async() => {
+      const querySnapshot = await getDocs(collection(db, "ExperienciaLaboral"));
+      const arrayWorks = [];
+      querySnapshot.forEach((doc) => {
+        arrayWorks.push({...doc.data()});
+    });
+    setprojectsDb(arrayWorks);
+    console.log(arrayWorks);
+  }
+  fetch();
+  
+  },[]);
 
   return (
     <motion.section
