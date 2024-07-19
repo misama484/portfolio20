@@ -29,7 +29,7 @@ const Photo = () => {
             layout="fill" 
             priority 
             quality={100} 
-            className="object-contain" />
+            className= "bg-gradient-to-r from-black"  /> {/* CREAR GRADIENTE INFERIOR ESTE NO FUNCIONA */}
         </motion.div>
 
         {/* Circulo */}
@@ -66,6 +66,11 @@ const Photo = () => {
 
     </div>
   )
+}
+
+const styles = { 
+  
+    maskImage: 'linear-gradient(black 80%, transparent)',
 }
 
 export default Photo

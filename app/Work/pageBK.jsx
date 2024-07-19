@@ -286,18 +286,7 @@ const Work = () => {
     setProject(projects[currentIndex]);
   }
 
-  useEffect(() => {
-    const fetchWorks = async() => {
-      const querySnapshot = await getDocs(collection(db, "Proyectos"));
-      const arrayWorks = [];
-      querySnapshot.forEach((doc) => {
-        arrayWorks.push({...doc.data()});
-    });
-    setProjectsDb(arrayWorks);
-    console.log(arrayWorks);
-  }
-  fetchWorks();  
-  },);
+  
 
   return (
     <motion.section
@@ -310,20 +299,20 @@ const Work = () => {
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
           <div key={index} className="flex flex-col gap-[30px] h-[50%]">
                 {/* outline num */}
-                <div className="text-8xl leading-none font-extrabold text-transparent text-outline">{project.id}</div>
+                <div className="text-8xl leading-none font-extrabold text-transparent text-outline">{projects.id}</div>
                 {/* project name */}
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">{project.title}</h2>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">{projects.title}</h2>
                 {/* project category */}
-                <p className="text-white/60 capitalize">{project.category}</p>
+                <p className="text-white/60 capitalize">{projects.category}</p>
                 {/* project Description */}
-                <p className="text-white/60">{project.description}</p>
+                <p className="text-white/60">{projects.description}</p>
                 {/* technologies */}
                 <ul className="flex gap-4">
-                  {project.tags.map((tag, index) => (                  
+                  {projects.tags.map((tag, index) => (                  
                     <li key={index} className="text-xl text-accent">
                       {tag}
                       {/* quitar ultima coma */}
-                      {index !== project.tags.length -1 && ","}
+                      {index !== projects.tags.length -1 && ","}
                     </li>
                   ))}
                 </ul>
@@ -333,7 +322,7 @@ const Work = () => {
                 {/* Botones */}
                 <div className="flex items-center gap-4">
                   {/* Boton Ver Proyecto */}
-                  <Link href={project.webapp}>
+                  <Link href={projects.webapp}>
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -347,7 +336,7 @@ const Work = () => {
                   </Link>
                   
                   {/* Boton Github */}
-                  <Link href={project.github}>
+                  <Link href={projects.github}>
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">

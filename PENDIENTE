@@ -1,0 +1,6 @@
+* annyadir degradado al inferior de foto en home
+
+* migrar datos a json e importarlo en paginas necesarias, de este modo solo sera necesario
+modificar el json para anyadir nuevos datos
+
+* maquetar correctamente pagina works, tal ves hacer modo targetas??

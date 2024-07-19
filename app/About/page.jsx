@@ -11,10 +11,6 @@ import { ScrollArea,  } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-//FIREBASE
-import { doc, getDoc, setDoc, getFirestore, collection, getDocs, query, where } from "firebase/firestore";
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../Database/FirebaseConfig';
 
 
 {/* datos */}
@@ -299,49 +295,8 @@ export const skillsList = [
 
 
 const About = () => {
-  const [data, setData] = useState(null);
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
 
-  const [aboutDb, setAboutDb] = useState([]);
-  const [experienceDb, setExperienceDb] = useState([]);
-  const [educationDb, setEducationDb] = useState([]);
   
-  //useEffect que retorna los datos de Experiencia Laboral de la bd
-  useEffect(() => {
-    const fetchExperience = async() => {
-      const querySnapshot = await getDocs(collection(db, "ExperienciaLaboral"));
-      const arrayExperience = [];
-      querySnapshot.forEach((doc) => {
-        arrayExperience.push({...doc.data()});
-    });
-    setExperienceDb(arrayExperience);
-    //console.log(arrayEducation);
-  }
-    const fetchEducation = async() => {
-      const querySnapshot = await getDocs(collection(db, "ExperienciaAcademica"));
-      const arrayEducation = [];
-      querySnapshot.forEach((doc) => {
-        arrayEducation.push({...doc.data()});
-    });
-    setEducationDb(arrayEducation);
-    //console.log(arrayEducation);
-  };
-  
-    const fetchAbout = async() => {
-      const querySnapshot = await getDocs(collection(db, "PortfolioDB"));
-      const arrayAbout = [];
-      querySnapshot.forEach((doc) => {
-        arrayAbout.push({...doc.data()});
-    });
-    setAboutDb(arrayAbout);
-    //console.log(arrayAbout);
-  };
-  fetchAbout();
-  fetchExperience();
-  fetchEducation();
-  
-  });
 
   return (
     <motion.div initial={{opacity:0}} animate={{
@@ -369,15 +324,16 @@ const About = () => {
               </div>
               <ScrollArea className="h-[800px]">                
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {experienceDb.map((item, index) => {
+                  {/* {experienceDb.map((item, index) => { */}
+                {experience.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.FechaInicio} -- {item.FechaFin}</span>
-                      <h3 className="text-xl max-w-[360px] min-h-[50px] text-center lg:text-left">{item.Puesto}</h3>
-                      <p className="text-white/60 text-center lg:text-left">{item.Nombre}</p>
+                      <span className="text-accent">{item.date}</span>
+                      <h3 className="text-xl max-w-[360px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
+                      <p className="text-white/60 text-center lg:text-left">{item.company}</p>
                       <div>
                         {/* dot */}
-                        {item.Funciones.map((func, index) => {
+                        {item.functions.map((func, index) => {
                           return(
                             <div key={index} className="flex items-center gap-2">
                               <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
@@ -401,21 +357,21 @@ const About = () => {
               </div>
               <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {educationDb.map((item, index) => {
+                {education.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
                       <div className="flex justify-between items-center w-full">
                         <div className="flex-1">
-                          <span className="text-accent">{item.fechas}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.nombre}</h3>
+                          <span className="text-accent">{item.date}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
                           <div key={index} className="flex items-center gap-2">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60 text-center lg:text-left">{item.origen}</p>
+                            <p className="text-white/60 text-center lg:text-left">{item.school}</p>
                           </div>
                       </div>
                       <div>
                         <Image 
-                          src={item.urlImagen} 
+                          src={item.img} 
                           alt="foto" 
                           //layout="fill" 
                           width={100}
