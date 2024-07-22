@@ -22,19 +22,19 @@ const Photo = () => {
           opacity: 1,
           transition: {delay: 1.4, duration: 0.4, ease: "easeInOut"},
         }}
-        className="w-[398px] h-[398px] xl:w-[508px] xl:h-[508px] mix-blend-lighten ml-11 absolute ">
+        className="w-[398px] h-[398px] xl:w-[478px] xl:h-[518px] mix-blend-lighten ml-16 absolute ">
           <Image 
             src="/assets/fotoDifum.png" 
             alt="foto" 
             layout="fill" 
             priority 
             quality={100} 
-            className= "bg-gradient-to-r from-black"  /> {/* CREAR GRADIENTE INFERIOR ESTE NO FUNCIONA */}
+            className= "bg-gradient-to-b from-black"  /> {/* CREAR GRADIENTE INFERIOR ESTE NO FUNCIONA */}
         </motion.div>
 
         {/* Circulo */}
         <motion.svg 
-          className="w-[400px] xl:w-[606px] h-[400px] xl:h-[606px]"
+          className="w-[400px] xl:w-[646px] h-[400px] xl:h-[646px]"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +68,5 @@ const Photo = () => {
   )
 }
 
-const styles = { 
-  
-    maskImage: 'linear-gradient(black 80%, transparent)',
-}
 
 export default Photo

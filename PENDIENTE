@@ -1,6 +1,9 @@
 * annyadir degradado al inferior de foto en home
 
 * migrar datos a json e importarlo en paginas necesarias, de este modo solo sera necesario
-modificar el json para anyadir nuevos datos
+modificar el json para anyadir nuevos datos OK
 
 * maquetar correctamente pagina works, tal ves hacer modo targetas??
+  -Ajustar imagenes 250px x 250px
+  -gestionar que las tecnologias se muestren como iconos
+  -acabar de maquetar
