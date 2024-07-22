@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 
 
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCx1xFCra-7-RlCV1NbvB7riZs2tazclM8",
   authDomain: "portfoliobd-fb6a9.firebaseapp.com",
   projectId: "portfoliobd-fb6a9",

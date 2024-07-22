@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, FaRegUser, FaMobileAlt, FaRocket, FaMapMarkedAlt, } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeXml } from "react-icons/tb";
@@ -10,6 +10,7 @@ import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/comp
 import { ScrollArea,  } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 
 
 {/* datos */}
@@ -164,6 +165,8 @@ const education = {
 ],
 };
 
+
+
 export const skillsList = [ 
   {
     title: "Frontend",
@@ -290,7 +293,11 @@ export const skillsList = [
 
 
 
+
 const About = () => {
+
+  
+
   return (
     <motion.div initial={{opacity:0}} animate={{
       opacity: 1,
@@ -315,13 +322,14 @@ const About = () => {
                 <h2 className="text-4xl font-bold">{experience.title}</h2>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
               </div>
-              <ScrollArea className="h-[800px]">
+              <ScrollArea className="h-[800px]">                
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                  {/* {experienceDb.map((item, index) => { */}
                 {experience.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
                       <span className="text-accent">{item.date}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
+                      <h3 className="text-xl max-w-[360px] min-h-[50px] text-center lg:text-left">{item.position}</h3>
                       <p className="text-white/60 text-center lg:text-left">{item.company}</p>
                       <div>
                         {/* dot */}
@@ -338,8 +346,7 @@ const About = () => {
                     </li>
                     )})}
                 </ul>
-              </ScrollArea>
-            
+              </ScrollArea>            
             </TabsContent>
 
             {/* education */}
@@ -353,13 +360,27 @@ const About = () => {
                 {education.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
-                      <span className="text-accent">{item.date}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
-                      <div key={index} className="flex items-center gap-2">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-white/60 text-center lg:text-left">{item.school}</p>
-                            </div>
-                      
+                      <div className="flex justify-between items-center w-full">
+                        <div className="flex-1">
+                          <span className="text-accent">{item.date}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
+                          <div key={index} className="flex items-center gap-2">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60 text-center lg:text-left">{item.school}</p>
+                          </div>
+                      </div>
+                      <div>
+                        <Image 
+                          src={item.img} 
+                          alt="foto" 
+                          //layout="fill" 
+                          width={100}
+                          height={100}
+                          priority 
+                          quality={100} 
+                          className="object-contain" />
+                        </div>
+                      </div>                     
                     </li>
                     )})}
                 </ul>
@@ -424,7 +445,7 @@ const About = () => {
                       </li>
                     )
                   })}
-                </ul>
+                </ul>                
               </div>
             </TabsContent>
           </div>
@@ -486,4 +507,21 @@ export default About
                   })}
                 </ul>
               </ScrollArea>
+
+              ----------------------
+              {EDUCATION}
+              <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                {education.items.map((item, index) => {
+                  return(
+                    <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
+                      <span className="text-accent">{item.date}</span>
+                      <h3 className="text-xl max-w-[260px] min-h-[50px] text-center lg:text-left">{item.grade}</h3>
+                      <div key={index} className="flex items-center gap-2">
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <p className="text-white/60 text-center lg:text-left">{item.school}</p>
+                            </div>
+                      
+                    </li>
+                    )})}
+                </ul>
 */
