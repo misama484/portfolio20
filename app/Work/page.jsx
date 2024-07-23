@@ -270,6 +270,30 @@ const projects = [
      ]
    },
 ];
+const projectunique = [
+
+    {
+      id: 0,
+      title: "Platformer",
+      date: "",
+      description:
+        "Juego de plataformas desarrollado en Unity",
+      image:
+        "https://github.com/misama484/PlatFormer/raw/main/Captura%20de%20pantalla%202023-01-17%20111700.png",
+      tags: ["Unity", "C#"],
+      category: "game",
+      github: "https://github.com/misama484/PlatFormer",
+      webapp: "https://miguelsanchezdev.itch.io/pixelplatforms",
+      member: [
+        {
+          name: "Miguel Sanchez",
+          img: "https://avatars.githubusercontent.com/u/86913656?v=4",
+          linkedin: "https://www.linkedin.com/in/sanchezmartinezmiguel",
+          github: "https://github.com/misama484",
+        },
+      ],
+    },
+]
 
 const projectsJson = datos.datos.proyectos
 
@@ -285,12 +309,8 @@ const Work = () => {
       animate = {{ opacity: 1, transition:{ delay:1.4, duration: 0.4, ease:"easeIn"} }}
       className="min-h-[80vh] flex flex-cols-2 justify-center py-12 xl:px-0"
     >
-      <div className="grid grid-cols-2 gap-5 mx-20">
-        {projects.map((project, index) => {
-          return(
-            <ProjectCard key={index} project = {project} />
-          )
-        })}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20">
+       <ProjectCard project={project[0]} />
         
       </div>
     </motion.section>
@@ -302,7 +322,11 @@ export default Work
 
 {/* --CODIGO GUARDADO--
   
-  
+   {projectsJson.map((project, index) => {
+          return(
+            <ProjectCard key={index} project = {project} />
+          )
+        })}
   
   
 */}
