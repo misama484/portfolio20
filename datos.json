@@ -248,7 +248,7 @@
       "MongoDB",
       "Windows"
     ],
-    "category": "Windows",
+    "category": "windows",
     "github": "https://github.com/misama484/AAD/tree/AEVT4_Gest_Biblio_Mongo",
     "webapp": "",
     "member": [
@@ -274,7 +274,7 @@
       "C#",
       "Windows"
     ],
-    "category": "Games",
+    "category": "game",
     "github": "https://github.com/misama484/FPS-3D",
     "webapp": "",
     "member": [
@@ -300,7 +300,7 @@
       "C#",
       "Android"
     ],
-    "category": "Games",
+    "category": "game",
     "github": "https://github.com/misama484/SpaceInvadersScripts",
     "webapp": "",
     "member": [
@@ -326,7 +326,7 @@
       "MUI",
       "StyledComponents"
     ],
-    "category": "Web",
+    "category": "web",
     "github": "https://github.com/misama484/PortFolioReact3",
     "webapp": "https://miguelsanchez.dev",
     "member": [
@@ -352,7 +352,7 @@
       "MUI",
       "React Native Paper"
     ],
-    "category": "Android",
+    "category": "android",
     "github": "https://github.com/misama484/hpquizz",
     "webapp": "",
     "member": [
@@ -378,7 +378,7 @@
       "MUI",
       "React Native Paper"
     ],
-    "category": "Android",
+    "category": "android",
     "github": "https://github.com/misama484/notices",
     "webapp": "",
     "member": [
@@ -403,7 +403,7 @@
       "React",
       "TailwindCSS"
     ],
-    "category": "Web",
+    "category": "web",
     "github": "https://github.com/misama484/SimonSayReact",
     "webapp": "https://simonsay.miguelsanchez.dev",
     "member": [

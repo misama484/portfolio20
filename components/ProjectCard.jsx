@@ -7,7 +7,7 @@ import datos from "../datos.json"
 import { FaGithub, FaJava, FaReact, FaUnity } from 'react-icons/fa';
 import { TbBrandCSharp, TbBrandTailwind, TbWorldWww } from 'react-icons/tb';
 import { SiMongodb, SiWindows95, SiAndroidstudio, SiMui, SiStyledcomponents } from 'react-icons/si';
-import { IoGameControll } from 'react-icons/io5';
+import { IoGameControllerOutline  } from 'react-icons/io5';
 import { IoLogoAndroid } from 'react-icons/io';
 
 const projectsJson = datos.projects;
@@ -21,11 +21,11 @@ const iconos = {
   FaReact: <FaReact />,
   SiWindows95: <SiWindows95 />,
   SiAndroidstudio: <SiAndroidstudio />,
-  SiMui: <SiMui />,
+  SiMui: <SiMui />, 
   SiStyledcomponents: <SiStyledcomponents />,
   TbBrandTailwind: <TbBrandTailwind />,
   SiStyledcomponents: <SiStyledcomponents />,
-  IoGameControll: <IoGameControll/>,
+  IoGameControllerOutline: <IoGameControllerOutline />,
   TbWorldWww: <TbWorldWww />,
   IoLogoAndroid: <IoLogoAndroid />
 };
@@ -48,7 +48,7 @@ const ProjectCard = ({project}) => {
     {nombre: "TailwindCSS", valor:"TbBrandTailwind"},
   ]
   const categories = [
-    {nombre: "game", valor: "IoGameControll"},
+    {nombre: "game", valor: "IoGameControllerOutline"},
     {nombre: "windows", valor: "SiWindows95"},
     {nombre: "android", valor: "IoLogoAndroid"},
     {nombre: "web", valor: "TbWorldWww"},
@@ -67,7 +67,8 @@ const ProjectCard = ({project}) => {
                 {project.title}
               </h1>
               <div class="text-xl font-semibold text-accent"> 
-                {categoriaProyecto && iconos[categoriaProyecto.valor]} {/* NO FUNCIONA, DEBE COMPARAR CON LA LISTA DE ICONOS PARA MOSTRAR LA CATEGORIA */}
+                {iconos[categoriaProyecto.valor]} {/* NO FUNCIONA, DEBE COMPARAR CON LA LISTA DE ICONOS PARA MOSTRAR LA CATEGORIA */}
+                
             </div>
               <div class="w-full flex-none text-sm font-medium text-slate-500 mt-2">
                 {project.description}

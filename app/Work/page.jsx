@@ -297,7 +297,7 @@ const projectunique = [
 
 const projectsJson = datos.datos.proyectos
 
-const Work = () => {
+const Work = () => { 
 
   const [project, setProject] = useState(projects[0]);
 
@@ -310,7 +310,11 @@ const Work = () => {
       className="min-h-[80vh] flex flex-cols-2 justify-center py-12 xl:px-0"
     >
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20">
-       <ProjectCard project={projectsJson[0]} />
+       {projectsJson.map((project, index) => {
+          return(
+            <ProjectCard key={index} project = {project} />
+          )
+        })}
         
       </div>
     </motion.section>
@@ -322,11 +326,7 @@ export default Work
 
 {/* --CODIGO GUARDADO--
   
-   {projectsJson.map((project, index) => {
-          return(
-            <ProjectCard key={index} project = {project} />
-          )
-        })}
-  
+   
+  <ProjectCard project={projectsJson[3]} />
   
 */}
