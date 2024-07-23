@@ -53,21 +53,22 @@ const ProjectCard = ({project}) => {
     {nombre: "android", valor: "IoLogoAndroid"},
     {nombre: "web", valor: "TbWorldWww"},
   ]
+  //buscamos el valor de project.category en el array de categorias y renderizamos el componente del array iconos con el mismo nombre
   const categoriaProyecto = categories.find(categoria => categoria.nombre === project.category);
-  console.log(categoriaProyecto.valor)
+  
 
   return (
-        <div className="flex justify-center items-center  font-sans rounded-md hover:border hover:border-accent">
-          <div className="m-5  min-h-[200px] min-w-[200px]">
-            <Image src={project.image} width={200} height={200} className="rounded-md" alt="IMAGE"/>
+        <div className="flex justify-center items-center  font-sans rounded-md hover:border hover:border-accent min-h-[200px] min-w-[200px]">
+          <div className="m-5 min-w-[150px] min-h-[200px] justify-center">
+            <Image src={project.image} width={200} height={200} className="rounded-md flex items-center" alt="IMAGE"/>
           </div>
           <div class="flex-auto p-6 ">
             <div class="flex flex-wrap">
               <h1 class="flex-auto text-2xl font-semibold text-accent">
                 {project.title}
               </h1>
-              <div class="text-xl font-semibold text-accent"> 
-                {iconos[categoriaProyecto.valor]} {/* NO FUNCIONA, DEBE COMPARAR CON LA LISTA DE ICONOS PARA MOSTRAR LA CATEGORIA */}
+              <div class="text-3xl font-semibold text-accent"> 
+                {iconos[categoriaProyecto.valor]} 
                 
             </div>
               <div class="w-full flex-none text-sm font-medium text-slate-500 mt-2">
