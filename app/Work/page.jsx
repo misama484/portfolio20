@@ -310,7 +310,7 @@ const Work = () => {
       className="min-h-[80vh] flex flex-cols-2 justify-center py-12 xl:px-0"
     >
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20">
-       <ProjectCard project={project[0]} />
+       <ProjectCard project={projectsJson[0]} />
         
       </div>
     </motion.section>
