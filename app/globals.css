@@ -22,4 +22,11 @@
   .text-outline-hover {
     -webkit-text-stroke: 2px #3dadf2;
   }
+
+  .image {
+    mask-image: linear-gradient(
+      black 90%,
+      transparent
+    )
+  }
 }

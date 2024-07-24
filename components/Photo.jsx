@@ -22,14 +22,14 @@ const Photo = () => {
           opacity: 1,
           transition: {delay: 1.4, duration: 0.4, ease: "easeInOut"},
         }}
-        className="w-[398px] h-[398px] xl:w-[478px] xl:h-[518px] mix-blend-lighten ml-1 absolute ">
+        className="w-[398px] h-[398px] xl:w-[578px] xl:h-[618px] mix-blend-lighten ml-1 absolute">
           <Image 
             src="/assets/fotoDifum.png" 
             alt="foto" 
             layout="fill" 
             priority 
             quality={100} 
-            className= "bg-gradient-to-b from-black"  /> {/* CREAR GRADIENTE INFERIOR ESTE NO FUNCIONA */}
+            className= "image "  /> {/* creado gradiente, en global.css */}
         </motion.div>
 
         {/* Circulo */}
