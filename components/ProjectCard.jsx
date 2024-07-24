@@ -9,6 +9,7 @@ import { TbBrandCSharp, TbBrandTailwind, TbWorldWww } from 'react-icons/tb';
 import { SiMongodb, SiWindows95, SiAndroidstudio, SiMui, SiStyledcomponents } from 'react-icons/si';
 import { IoGameControllerOutline  } from 'react-icons/io5';
 import { IoLogoAndroid } from 'react-icons/io';
+import { Button } from './ui/button';
 
 const projectsJson = datos.projects;
 
@@ -91,19 +92,15 @@ const ProjectCard = ({project}) => {
             </div>
             <div class="flex space-x-4 mb-6 text-sm font-medium">
               <div class="flex-auto flex space-x-4">
-                <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
-                  Ver proyecto
-                </button>
-                <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-white-900" type="button">
-                  Add to bag
-                </button>
+                <Button variant="outline" className="text-accent hover:text-primary" onClick={() => window.open(project.github, '_blank')}>Ver Proyecto</Button>
+                <Button variant="outline" className="text-accent hover:text-primary" onClick={() => window.open(project.webapp, alert("Live no disponible"))}>Live</Button>
               </div>
               <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-white hover:text-accent border border-white hover:border-accent" type="button" aria-label="Like">
                 <FaGithub className='text-xl hover:text-accent'/>
               </button>
             </div>
             <p class="text-sm text-slate-700">
-              Free shipping on all continental US orders.
+              {project.date}
             </p>
           </div>
         </div>

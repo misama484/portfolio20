@@ -296,7 +296,7 @@ const projectunique = [
 ]
 
 const projectsJson = datos.datos.proyectos
-
+const reverseJson = [...projectsJson].reverse();
 const Work = () => { 
 
   const [project, setProject] = useState(projects[0]);
@@ -310,7 +310,7 @@ const Work = () => {
       className="min-h-[80vh] flex flex-cols-2 justify-center py-12 xl:px-0"
     >
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20">
-       {projectsJson.map((project, index) => {
+       {reverseJson.map((project, index) => {
           return(
             <ProjectCard key={index} project = {project} />
           )

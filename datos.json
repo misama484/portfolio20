@@ -237,32 +237,6 @@
 
    {
     "id": 3,
-    "title": "Gestión de biblioteca",
-    "date": "",
-    "description":
-      "Pequeña aplicación para la gestión de una biblioteca doméstica",
-    "image":
-      "https://github.com/misama484/AAD/blob/AEVT4_Gest_Biblio_Mongo/Captura%20de%20pantalla%202023-01-17%20112455.png?raw=true",
-    "tags": [
-      "Java",
-      "MongoDB",
-      "Windows"
-    ],
-    "category": "windows",
-    "github": "https://github.com/misama484/AAD/tree/AEVT4_Gest_Biblio_Mongo",
-    "webapp": "",
-    "member": [
-       {
-         "name": "Miguel Sanchez",
-         "img": "https://avatars.githubusercontent.com/u/86913656?v=4",
-         "linkedin": "https://www.linkedin.com/in/sanchezmartinezmiguel",
-         "github": "https://github.com/misama484"
-       }
-     ]
-   },
-
-   {
-    "id": 4,
     "title": "Shooter 3D",
     "date": "",
     "description":
@@ -288,7 +262,7 @@
    },
 
    {
-    "id": 5,
+    "id": 4,
     "title": "Space Invaders",
     "date": "",
     "description":
@@ -314,7 +288,7 @@
    },
 
    {
-    "id": 6,
+    "id": 5,
     "title": "Portfolio personal",
     "date": "",
     "description":
@@ -340,7 +314,7 @@
    },   
 
    {
-    "id": 7,
+    "id": 6,
     "title": "Quizz Harry Potter",
     "date": "2023 - En desarrollo",
     "description":
@@ -366,7 +340,7 @@
    },
 
    {
-    "id": 8,
+    "id": 7,
     "title": "NotIces",
     "date": "2023 - En desarrollo",
     "description":
@@ -392,7 +366,7 @@
    },
 
    {
-    "id": 9,
+    "id": 8,
     "title": "SimonSay",
     "date": "2023 - En desarrollo",
     "description":
@@ -406,6 +380,31 @@
     "category": "web",
     "github": "https://github.com/misama484/SimonSayReact",
     "webapp": "https://simonsay.miguelsanchez.dev",
+    "member": [
+       {
+         "name": "Miguel Sanchez",
+         "img": "https://avatars.githubusercontent.com/u/86913656?v=4",
+         "linkedin": "https://www.linkedin.com/in/sanchezmartinezmiguel",
+         "github": "https://github.com/misama484"
+       }
+     ]
+   },
+
+   {
+    "id": 9,
+    "title": "TakeFood",
+    "date": "2024 - En desarrollo",
+    "description":
+      "Sitio web para un negocio de comida a domicilio, centrado en pizzas, creado con React y TailwindCSS.",
+    "image":
+      "https://github.com/misama484/takefood/blob/Variante1/foto.png?raw=true",
+    "tags": [
+      "React",
+      "TailwindCSS"
+    ],
+    "category": "web",
+    "github": "https://github.com/misama484/takefood",
+    "webapp": "",
     "member": [
        {
          "name": "Miguel Sanchez",
