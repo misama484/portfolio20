@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { CiMenuFries } from 'react-icons/ci';
+import Typewriter from 'typewriter-effect';
 
 
 const links = [
@@ -42,10 +43,18 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className='flex flex-col'>
         {/* Logo */}
-        <div className='mt-32 mb-40 text-center text-2xl'>
+        <div className='mt-28 mb-40 text-center text-2xl'>
           <Link href='/'>
-            <h1 className='text-4xl font-semibold'>Miguel Sánchez<span className='text-accent'>.</span></h1>
+            <h1 className='text-4xl font-semibold mb-4'>Miguel Sánchez<span className='text-accent'>.</span></h1>
           </Link>
+          <Typewriter
+              className="text-accent"
+              options={{
+                strings: "Desarrollador Junior",
+                typeString:<p clasname="text-accent">Desarrollador</p>,
+                autoStart: true,
+                loop: true,
+              }}/>
         </div>
         {/* nav */}
         <nav className='flex flex-col justify-center items-center gap-8'>
@@ -63,3 +72,9 @@ const MobileNav = () => {
 }
 
 export default MobileNav
+
+/*
+
+
+
+*/

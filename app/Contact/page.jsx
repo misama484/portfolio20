@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue  } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
@@ -28,6 +29,48 @@ const info = [
 ]
 
 const Contact = () => {
+  //manejo del mensaje para envio
+  const [formData, setFormData] = useState({
+    nombre:'',
+    apellido:'',
+    email:'',
+    telefono:'',
+    servicio:'',
+    mensaje:'',
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    console.log(name, value)
+    console.log(formData.nombre)
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if(response.ok){
+        alert("mensaje enviado")
+      } else {
+        alert("error al enviar el mensaje")
+      }
+    }catch(error){
+      console.error("ERROR", error)
+      alert("ERROR", formData)
+    }
+  }
+
+
   return (
     <motion.section
       initial = {{ opacity: 0 }}
@@ -38,15 +81,15 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* fromulario */}
           <div className="xl:h-[54%] ordere-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"> 
+            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" onSubmit={handleSubmit}> 
               <h3 className="text-4xl text-accent">Contactame!</h3>
               <p className="text-white/60">Si deseas contactar conmigo para solicitar un trabajo, 
               colaboracion o simplemente saludar, no lo dudes, te respondere lo antes posible.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                <Input type="firstname" placeholder="Nombre" />
-                <Input type="lastname" placeholder="Apellido"/>
-                <Input type="email" placeholder="Email"/>
-                <Input type="phone" placeholder="Telefono"/>
+                <Input type="firstname" placeholder="Nombre" onChange={handleChange} />
+                <Input type="lastname" placeholder="Apellido" onChange={handleChange} />
+                <Input type="email" placeholder="Email" onChange={handleChange} />
+                <Input type="phone" placeholder="Telefono" onChange={handleChange} />
                 
               </div>
               {/* Select service */}
@@ -64,7 +107,7 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {/* TextArea */}
-              <Textarea placeholder="Mensaje"/>
+              <Textarea placeholder="Mensaje" onChange={handleChange} value={formData.mensaje}/>
               <Button size="md" className="max-w-40">Enviar</Button>
             </form>
             
@@ -92,5 +135,6 @@ const Contact = () => {
     </motion.section>
   )
 }
+
 
 export default Contact

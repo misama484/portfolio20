@@ -164,7 +164,7 @@
   {
     "id": 0,
     "title": "Platformer",
-    "date": "",
+    "date": "2022",
     "description":
       "Juego de plataformas desarrollado en Unity",
     "image":
@@ -186,7 +186,7 @@
   {
    "id": 1,
    "title": "Gestion de Biblioteca",
-   "date": "",
+   "date": "2022",
    "description":
      "Pequeña aplicacion para la gestion de una biblioteca, hecha en Java para entornos Windows",
    "image":
@@ -212,7 +212,7 @@
   {
     "id": 2,
     "title": "FlappyBird",
-    "date": "",
+    "date": "2022",
     "description":
       "Divertido juego donde un lindo pajarraco atraviesa tuberias sumando puntos. Hecho en Unity para Android",
     "image":
@@ -238,7 +238,7 @@
    {
     "id": 3,
     "title": "Shooter 3D",
-    "date": "",
+    "date": "2022",
     "description":
       "Shooter FPS en 3d - En desarrollo -",
     "image":
@@ -264,7 +264,7 @@
    {
     "id": 4,
     "title": "Space Invaders",
-    "date": "",
+    "date": "2021",
     "description":
       "Clasico juego de marcianitos",
     "image":
@@ -290,7 +290,7 @@
    {
     "id": 5,
     "title": "Portfolio personal",
-    "date": "",
+    "date": "2022",
     "description":
       "Codigo de este mismo portfolio, desarrollado en React, StyledComponents y MaterialUI",
     "image":
@@ -316,7 +316,7 @@
    {
     "id": 6,
     "title": "Quizz Harry Potter",
-    "date": "2023 - En desarrollo",
+    "date": "2023",
     "description":
       "App desarrollada en React Native, con un pequeño juego de preguntas y una pequeña base de datos que se conecta a una API para mostrar informacion sobre los personajes de la saga y los hechizos",
     "image":
@@ -342,7 +342,7 @@
    {
     "id": 7,
     "title": "NotIces",
-    "date": "2023 - En desarrollo",
+    "date": "2023",
     "description":
       "App desarrollada en React Native, muestra una seleccion de noticias filtradas por categorias ademas de una prediccion del tiempo.",
     "image":
@@ -368,7 +368,7 @@
    {
     "id": 8,
     "title": "SimonSay",
-    "date": "2023 - En desarrollo",
+    "date": "2023",
     "description":
       "App desarrollada en React, el mitico juego de SimonSay, utilizando ReactHooks y TailwindCSS.",
     "image":
