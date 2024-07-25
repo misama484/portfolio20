@@ -82,9 +82,9 @@ const ProjectCard = ({project}) => {
                   const resultado = tecnologias.find(tecnologia => tecnologia.nombre === tag)
                   const nombreComponente = resultado.valor
                   return (
-                    <div key={index}>
+                    <div key={index} className='min-w-[50px] p-2 text-accent hover:text-primary hover:bg-accent rounded-md'>
                       <div className='flex justify-center'> {iconos[nombreComponente]} </div>
-                      <div className='flex justify-center text-sm' > {tag} </div>
+                      <div className='flex justify-center text-xs' > {tag} </div>
                     </div>
                   )
                 })}

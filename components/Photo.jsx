@@ -14,6 +14,7 @@ const Photo = () => {
           opacity: 1,
           transition: {delay: 1, duration: 0.4, ease: "easeIn"},
         }}
+        className="border border-red"
         >
           {/* Imagen */}
         <motion.div
@@ -34,7 +35,7 @@ const Photo = () => {
 
         {/* Circulo */}
         <motion.svg 
-          className="w-[400px] xl:w-[646px] h-[400px] xl:h-[646px]"
+          className="w-[450px] xl:w-[646px] h-[450px] xl:h-[646px]"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +43,7 @@ const Photo = () => {
             <motion.circle 
             cx="253" 
             cy="253" 
-            r="250"
+            r="260"
             stroke="#71c2f5"
             strokeWidth="4"
             initial={{ strokeDasharray:"24 10 0 0"}}
