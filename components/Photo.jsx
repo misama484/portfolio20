@@ -23,7 +23,7 @@ const Photo = () => {
           opacity: 1,
           transition: {delay: 1.4, duration: 0.4, ease: "easeInOut"},
         }}
-        className="w-[398px] h-[398px] xl:w-[578px] xl:h-[618px] mix-blend-lighten ml-1 absolute">
+        className="w-[398px] h-[398px] xl:w-[558px] xl:h-[598px] mix-blend-lighten ml-1 absolute">
           <Image 
             src="/assets/fotoDifum.png" 
             alt="foto" 

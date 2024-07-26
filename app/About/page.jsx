@@ -11,6 +11,9 @@ import { ScrollArea,  } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+//Datos
+import data from "../../datos.json"
+
 
 
 {/* datos */}
@@ -296,7 +299,7 @@ export const skillsList = [
 
 const About = () => {
 
-  
+  console.log(data.datos.experience.title)
 
   return (
     <motion.div initial={{opacity:0}} animate={{
@@ -319,13 +322,13 @@ const About = () => {
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h2 className="text-4xl font-bold">{experience.title}</h2>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
+                <h2 className="text-4xl font-bold">{data.datos.experience.title}</h2>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{data.datos.experience.description}</p>
               </div>
               <ScrollArea className="h-[800px]">                
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                   {/* {experienceDb.map((item, index) => { */}
-                {experience.items.map((item, index) => {
+                {data.datos.experience.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
                       <span className="text-accent">{item.date}</span>

@@ -82,36 +82,32 @@
     },
     {
       "icon": "/assets/assets/resume/badge.svg",
-      "company": "Freelance",
-      "position": "Front-end developer",
-      "date": "2020 - Actualidad",
-      "description": "Desarrollo de aplicaciones web y páginas web para diferentes clientes, tanto en el frontend como en el backend.",
+      "company": "Inired",
+      "position": "Desarrollador en Practicas",
+      "date": " Marzo-2024 - Mayo-2024",
+      "description": "Practicas formativa GD-DAM donde desarrolle junto con mis compañeros de practicas un proyecto para una tienda online, desde el inicio participando en todo el proceso del desarrollo centrandonos mayormente en el frontend y en el backend.",
       "functions":[
-        "Mantenimiento y Administración de Equipos informáticos.",
-        "Mantenimiento y Administración de equipos de electrónica de red.",
-        "Administración de sistemas.",
-        "Implantación, configuración y despliegue de redes.",
-        "Despliegue y mantenimiento de redes de F.O.",
-        "Despliegue y mantenimiento de redes satelitales.",
-        "AWS",
-        "EC2"
+        "Desarrollo FrontEnd con React haciendo uso de la Libreria DevExtreme",
+        "Diseño UX/UI del proyecto con Figma",
+        "Desarrollo Back-end con Java, Spring/Springboot",
+        "Base de datos SQL con PostgreeSQL",
+        "Uso de Git/Github para control de versiones",
+        "Trello para control de tareas/tickets"
       ]
     },
     {
       "icon": "/assets/assets/resume/badge.svg",
       "company": "Freelance",
-      "position": "Front-end developer",
-      "date": "2020 - Actualidad",
-      "description": "Desarrollo de aplicaciones web y páginas web para diferentes clientes, tanto en el frontend como en el backend.",
+      "position": "Full-stack developer",
+      "date": "2021 - Actualidad",
+      "description": "Desarrollo de aplicaciones web y páginas web para diferentes clientes, desarrollando parte frontend y backend.",
       "functions":[
-        "Mantenimiento y Administración de Equipos informáticos.",
-        "Mantenimiento y Administración de equipos de electrónica de red.",
-        "Administración de sistemas.",
-        "Implantación, configuración y despliegue de redes.",
-        "Despliegue y mantenimiento de redes de F.O.",
-        "Despliegue y mantenimiento de redes satelitales.",
-        "AWS",
-        "EC2"
+        "Desarrollo FrontEnd con React, Angular",
+        "Frameworks como Vite, Next, Astro, etc...",
+        "Desarrollo Backend con Java, Spring, Node, etc...",
+        "Bases de datos tanto SQL como NoSQL",
+        "Despliegue de webs en servidores",
+        "Despliegue de aplicaciones en tiendas de apps"
       ]
     }
   ]

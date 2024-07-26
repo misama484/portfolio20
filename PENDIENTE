@@ -9,3 +9,5 @@ modificar el json para anyadir nuevos datos /*OK*/
   -acabar de maquetar
 
 * Al cambiar tamaño de ventana, se mueve la foto /*OK*/
+
+* Obtener los datos de About desde el Json, cuidado con los iconos de react-icons
