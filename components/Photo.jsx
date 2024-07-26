@@ -14,7 +14,7 @@ const Photo = () => {
           opacity: 1,
           transition: {delay: 1, duration: 0.4, ease: "easeIn"},
         }}
-        className="border border-red"
+        className="flex justify-center items-center w-full h-full relative"
         >
           {/* Imagen */}
         <motion.div
@@ -30,7 +30,7 @@ const Photo = () => {
             layout="fill" 
             priority 
             quality={100} 
-            className= "image "  /> {/* creado gradiente, en global.css */}
+            className= "image border rounded-full border-transparent"  /> {/* creado gradiente, en global.css */}
         </motion.div>
 
         {/* Circulo */}
@@ -43,7 +43,7 @@ const Photo = () => {
             <motion.circle 
             cx="253" 
             cy="253" 
-            r="260"
+            r="250"
             stroke="#71c2f5"
             strokeWidth="4"
             initial={{ strokeDasharray:"24 10 0 0"}}

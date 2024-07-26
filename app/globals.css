@@ -25,7 +25,7 @@
 
   .image {
     mask-image: linear-gradient(
-      black 90%,
+      black 85%,
       transparent
     )
   }

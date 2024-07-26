@@ -1,11 +1,11 @@
-* annyadir degradado al inferior de foto en home
+* annyadir degradado al inferior de foto en home /*OK*/
 
 * migrar datos a json e importarlo en paginas necesarias, de este modo solo sera necesario
-modificar el json para anyadir nuevos datos OK
+modificar el json para anyadir nuevos datos /*OK*/
 
-* maquetar correctamente pagina works, tal ves hacer modo targetas??
+* maquetar correctamente pagina works, tal vez hacer modo tarjetas??
   -Ajustar imagenes 250px x 250px
-  -gestionar que las tecnologias se muestren como iconos OK
+  -gestionar que las tecnologias se muestren como iconos /*OK*/
   -acabar de maquetar
 
-* Al cambiar tamaño de ventana, se mueve la foto
+* Al cambiar tamaño de ventana, se mueve la foto /*OK*/
