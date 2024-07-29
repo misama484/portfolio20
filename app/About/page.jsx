@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaPython, FaJava, FaGit, FaGithub, FaUnity, FaLinux, FaAws, FaRegUser, FaMobileAlt, FaRocket, FaMapMarkedAlt, } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95 } from 'react-icons/si'
-import { TbBrandReactNative, TbFileTypeXml } from "react-icons/tb";
+import { SiTailwindcss, SiNextdotjs, SiMysql, SiMongodb, SiFirebase, SiAndroidstudio, SiWindows95, SiMui, SiStyledcomponents } from 'react-icons/si'
+import { TbBrandReactNative, TbFileTypeXml, TbBrandCSharp, TbBrandTailwind, TbWorldWww } from "react-icons/tb";
 import { MdAlternateEmail } from "react-icons/md";
+import { IoGameControllerOutline, IoLogoAndroid } from "react-icons/io5";
 import { LuLanguages } from "react-icons/lu";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -294,7 +295,23 @@ export const skillsList = [
   }
 ];
 
-
+const iconos = {
+  FaUnity: <FaUnity />,
+  TbBrandCSharp: <TbBrandCSharp />,
+  FaJava: <FaJava />,
+  SiMongodb: <SiMongodb />,
+  FaGithub: <FaGithub />,
+  FaReact: <FaReact />,
+  SiWindows95: <SiWindows95 />,
+  SiAndroidstudio: <SiAndroidstudio />,
+  SiMui: <SiMui />, 
+  SiStyledcomponents: <SiStyledcomponents />,
+  TbBrandTailwind: <TbBrandTailwind />,
+  SiStyledcomponents: <SiStyledcomponents />,
+  IoGameControllerOutline: <IoGameControllerOutline />,
+  TbWorldWww: <TbWorldWww />,
+  IoLogoAndroid: <IoLogoAndroid />
+};
 
 
 const About = () => {
@@ -360,7 +377,7 @@ const About = () => {
               </div>
               <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {education.items.map((item, index) => {
+                {data.datos.education.items.map((item, index) => {
                   return(
                     <li key={index} className="flex flex-col bg-[#232329] h-auto py-6 px-10 rounded-xl justify-center items-center lg:items-start gap-1 hover:bg-opacity-60">
                       <div className="flex justify-between items-center w-full">
@@ -398,7 +415,8 @@ const About = () => {
             </div>
               <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                {skillsList.map((skill, index) => {
+                  {/* ASIGNAR LOS ICONOS, SOLO RECIBE EL NOMBRE DEL COMPONENTE DESDE EL JSON */}
+                {data.datos.skillsList.map((skill, index) => {
                     return(
                       <div key={index} className="flex flex-col gap-4 h-auto">
                         <h2 className="text-4xl font-bold my-10 text-center lg:text-left text-accent">{skill.title}</h2>
@@ -430,7 +448,7 @@ const About = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full text-center xl:text-left">
+            <TabsContent value="about" className="w-full">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
