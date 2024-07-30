@@ -310,11 +310,50 @@ const iconos = {
   SiStyledcomponents: <SiStyledcomponents />,
   IoGameControllerOutline: <IoGameControllerOutline />,
   TbWorldWww: <TbWorldWww />,
-  IoLogoAndroid: <IoLogoAndroid />
+  IoLogoAndroid: <IoLogoAndroid />,
+  FaHtml5: <FaHtml5 />,
+  FaCss3: <FaCss3 />,
+  FaJs: <FaJs />,
+  FaBootstrap: <FaBootstrap />,
+  SiNextdotjs: <SiNextdotjs />,
+  FaNodeJs: <FaNodeJs />, //HASTA AQUI
+  FaPython: <FaPython />,
+  SiMysql: <SiMysql />,
+  SiFirebase: <SiFirebase />,
+  SiMongodb: <SiMongodb />,
+  TbFileTypeXml: <TbFileTypeXml />,
+  FaGit: <FaGit />,
+  FaAws: <FaAws />,
+  FaLinux: <FaLinux />,
+  FaFigma: <FaFigma />,
+
+
 };
 
 
 const About = () => {
+
+  const tecnologias = [
+    {nombre: "Unity", valor: "FaUnity"},
+    {nombre: "C#", valor:"TbBrandCSharp"},
+    {nombre: "Java", valor:"FaJava"},
+    {nombre: "MongoDB", valor: "SiMongodb"},
+    {nombre: "Github", valor: "FaGithub"},
+    {nombre: "ReactJs", valor: "FaReact"},
+    {nombre: "React", valor: "FaReact"},
+    {nombre: "Windows", valor: "SiWindows95"},
+    {nombre: "Android", valor: "SiAndroidstudio"},
+    {nombre: "MUI", valor:"SiMui"},
+    {nombre: "StyledComponents", valor:"SiStyledcomponents"},
+    {nombre: "React Native", valor: "FaReact"},
+    {nombre: "React Native Paper", valor: "FaReact"},
+    {nombre: "HTML", valor:"FaHtml5"},
+    {nombre: "CSS", valor:"FaCss3"},
+    {nombre: "JavaScript", valor:"FaJs"},
+    {nombre: "Bootstrap", valor: "FaBootstrap"},
+    {nombre: "Next.js", valor: "SiNextdotjs"},
+    {nombre: "NodeJs", valor:"FaNodeJs"},
+  ]
 
   console.log(data.datos.experience.title)
 

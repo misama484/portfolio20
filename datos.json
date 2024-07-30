@@ -418,7 +418,7 @@
       "title": "Frontend",
       "skills": [
         {
-          "name": "React Js",
+          "name": "ReactJs",
           "image": "FaReact"
         },
         {
@@ -439,7 +439,7 @@
         },
         {
           "name": "TailwindCSS",
-          "image": "SiTailwindcss"
+          "image": "TbBrandTailwind"
         },
         {
           "name": "Next.js",
@@ -451,7 +451,7 @@
       "title": "Backend",
       "skills": [
         {
-          "name": "Node Js",
+          "name": "NodeJs",
           "image": "FaNodeJs"
         },
         {
