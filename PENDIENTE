@@ -10,4 +10,8 @@ modificar el json para anyadir nuevos datos /*OK*/
 
 * Al cambiar tamaño de ventana, se mueve la foto /*OK*/
 
-* Obtener los datos de About desde el Json, cuidado con los iconos de react-icons
+* Obtener los datos de About desde el Json, cuidado con los iconos de react-icons /OK/
+
+* Gestionar iconos parte about de pagina About /* OK */
+
+* Problema no se muestran los iconos de skills /* OK */

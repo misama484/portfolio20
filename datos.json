@@ -30,11 +30,11 @@
       },
       {
         "fieldName": "Email",
-        "fieldValue": "miguelsanchez.dev@gmail.com",
+        "fieldValue": "contacto@miguelsanchez.dev",
         "icon": "<MdAlternateEmail />"
       },
       {
-        "fieldName": "Ubicación",
+        "fieldName": "Ubicacion",
         "fieldValue": "Valencia, España",
         "icon": "<FaMapMarkedAlt />"
       },
@@ -505,7 +505,7 @@
           "image": "FaGit"
         },
         {
-          "name": "GitHub",
+          "name": "Github",
           "image": "FaGithub"
         },
         {
