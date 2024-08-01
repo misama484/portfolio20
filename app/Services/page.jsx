@@ -42,7 +42,7 @@ const  Services = () => {
         >
           {services.map((service, index)=>{
             return (
-            <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
+            <div key={index} className="flex-1 flex flex-col justify-start gap-6 group border-b ">
               {/* top */}
               <div className="w-full flex justify-between items-center">
                 <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">{service.num}</div>
@@ -53,11 +53,9 @@ const  Services = () => {
               {/* title */}
               <h2 className="text-[38px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
               {/* Subtitle */}
-              <p className="text-white/60">{service.description}</p>
-              {/* border */}
-              <div className="border-b border-white/20 w-full">
+              <p className="text-white/60 p-b3">{service.description}</p>
 
-              </div>
+
             </div>
           );
           })}

@@ -13,7 +13,7 @@ const info = [
   {
     icon: <FaPhoneAlt/>,
     title: 'Telefono',
-    description: '666777888',
+    description: '607381404',
   },
   {
     icon: <FaEnvelope/>,
@@ -57,7 +57,10 @@ const Contact = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData, 
+          to: 'contacto@miguelsanchez.dev'
+        })
       });
       if(response.ok){
         alert("mensaje enviado")

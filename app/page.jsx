@@ -16,7 +16,6 @@ import Stats from "@/components/Stats";
 const Home = () => {
   
   const [data, setData] = useState(null);
-  console.log(datos.datos.about)
 
   return (
     <section className="h-full">

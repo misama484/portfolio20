@@ -8,6 +8,12 @@
     "title": "Sobre mi",
     "cargos":[ "Desarrollador junior", "SysAdmin" ],
     "description": "Desarrollador junior, apasionado de la informática y la tecnología, siempre me gusto saber como funcionan las cosas e intentar mejorarlas o adaptarlas a mis necesidades. Hace unos años me interesé por la programación y descubrí una nueva pasión, así que decidí dedicarme a ella al completo.",
+
+    "description2": ["Técnico superior en Desarrollo de Aplicaciones Multiplataforma, sin mucha experiencia laboral en el ámbito del desarrollo, pero con muchísima motivación, ganas de aprender y evolucionar como desarrollador. Me gusta mucho aprender y soy muy curioso.", 
+    "Llevo trabajando de técnico informático y administrador de redes desde el 2008 por lo que tengo cierta experiencia en el sector y aunque sin titulación, sí que dispongo de varias certificaciones y cursos que demuestran mis capacidades.", 
+    "Gracias a mi entorno laboral estos últimos años he desarrollado unas capacidades muy buenas en el trabajo bajo presión, la adaptabilidad a cambios y el trabajo en equipo, adaptándome muy bien a toda clase de situaciones sin perder de vista el objetivo y comprendiendo la manera más eficaz de conseguirlo.", 
+    "En el ámbito personal soy una persona muy alegre que disfruta de cada momento, sea el que sea. Intento encontrar siempre el lado positivo de las cosas y buscando siempre la solución a los problemas."],
+
     "linkedin":"https://www.linkedin.com/in/sanchezmartinezmiguel/",
     "github":"https://github.com/misama484",
     "facebook": "https://www.facebook.com/sanchezdevelopmentsAlzira",
@@ -35,7 +41,7 @@
       },
       {
         "fieldName": "Ubicacion",
-        "fieldValue": "Valencia, España",
+        "fieldValue": "Alzira, Valencia",
         "icon": "<FaMapMarkedAlt />"
       },
       {
