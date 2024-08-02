@@ -31,13 +31,15 @@ const info = [
 const Contact = () => {
   //manejo del mensaje para envio
   const [formData, setFormData] = useState({
-    nombre:'',
+    name:'',
     apellido:'',
     email:'',
     telefono:'',
     servicio:'',
     mensaje:'',
   })
+  //manejo del selector de servicio
+  const [service, setService] = useState
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,14 +54,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch('/send-email', {
+      const response = await fetch('https://formspree.io/f/mdknglvy', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
-          ...formData, 
-          to: 'contacto@miguelsanchez.dev'
+          ...formData
         })
       });
       if(response.ok){
@@ -89,10 +90,10 @@ const Contact = () => {
               <p className="text-white/60">Si deseas contactar conmigo para solicitar un trabajo, 
               colaboracion o simplemente saludar, no lo dudes, te respondere lo antes posible.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                <Input type="firstname" placeholder="Nombre" onChange={handleChange} />
-                <Input type="lastname" placeholder="Apellido" onChange={handleChange} />
-                <Input type="email" placeholder="Email" onChange={handleChange} />
-                <Input type="phone" placeholder="Telefono" onChange={handleChange} />
+                <Input name="firstname" placeholder="Nombre" onChange={handleChange} />
+                <Input name="lastname" placeholder="Apellido" onChange={handleChange} />
+                <Input name="email" placeholder="Email" onChange={handleChange} />
+                <Input name="phone" placeholder="Telefono" onChange={handleChange} />
                 
               </div>
               {/* Select service */}
@@ -110,7 +111,7 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {/* TextArea */}
-              <Textarea placeholder="Mensaje" onChange={handleChange} value={formData.mensaje}/>
+              <Textarea placeholder="Mensaje" onChange={handleChange} />
               <Button size="md" className="max-w-40">Enviar</Button>
             </form>
             
