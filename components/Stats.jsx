@@ -26,7 +26,7 @@ const Stats = () => {
     <section>
       <div className="container mx-auto flex flex-col items-center justify-center py-16">
         <h2 className="h2 mb-8">Mis estadísticas</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-3 justify-center items-center">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center justify-center">
               <CountUp end={stat.number} duration={10} className="text-4xl font-bold text-accent" />

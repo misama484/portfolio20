@@ -17,7 +17,7 @@ const links = [
     path: "/Services",
   },
   {
-    name: "sobreMi",
+    name: "sobre Mi",
     path: "/About",
   },
   {
@@ -27,10 +27,6 @@ const links = [
   {
     name: "contacto",
     path: "/Contact",
-  },
-  {
-    name: "Login",
-    path: "/Login",
   },
 ]
 

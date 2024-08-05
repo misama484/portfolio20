@@ -13,7 +13,7 @@ const links = [
     path: "/Services",
   },
   {
-    name: "sobreMi",
+    name: "sobre Mi",
     path: "/About",
   },
   {

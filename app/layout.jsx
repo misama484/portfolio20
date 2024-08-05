@@ -20,6 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* Servicio de chat */}
+      <script src="//code.tidio.co/opt7bt1krtbhm2f21t0aocf7qmyvouzp.js" async></script>
       <body className={jetbrainsMono.variable}>
         <Header />
         <StairTransition/>
