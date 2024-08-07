@@ -6,9 +6,10 @@ import Image from 'next/image'
 import datos from "../datos.json"
 import { FaGithub, FaJava, FaReact, FaUnity } from 'react-icons/fa';
 import { TbBrandCSharp, TbBrandTailwind, TbWorldWww } from 'react-icons/tb';
-import { SiMongodb, SiWindows95, SiAndroidstudio, SiMui, SiStyledcomponents } from 'react-icons/si';
+import { SiMongodb, SiWindows95, SiAndroidstudio, SiMui, SiStyledcomponents, SiNextdotjs } from 'react-icons/si';
 import { IoGameControllerOutline  } from 'react-icons/io5';
 import { IoLogoAndroid } from 'react-icons/io';
+import { RiFirebaseLine } from 'react-icons/ri';
 import { Button } from './ui/button';
 
 const projectsJson = datos.projects;
@@ -28,7 +29,9 @@ const iconos = {
   SiStyledcomponents: <SiStyledcomponents />,
   IoGameControllerOutline: <IoGameControllerOutline />,
   TbWorldWww: <TbWorldWww />,
-  IoLogoAndroid: <IoLogoAndroid />
+  IoLogoAndroid: <IoLogoAndroid />,
+  RiFirebaseLine: <RiFirebaseLine  />,
+  SiNextdotjs: <SiNextdotjs />,
 };
 
 const ProjectCard = ({project}) => {
@@ -47,6 +50,8 @@ const ProjectCard = ({project}) => {
     {nombre: "React Native", valor: "FaReact"},
     {nombre: "React Native Paper", valor: "FaReact"},
     {nombre: "TailwindCSS", valor:"TbBrandTailwind"},
+    {nombre: "Firebase", valor:"RiFirebaseLine"},
+    {nombre: "Next.js", valor: "SiNextdotjs"},
   ]
   const categories = [
     {nombre: "game", valor: "IoGameControllerOutline"},
@@ -93,7 +98,15 @@ const ProjectCard = ({project}) => {
             <div class="flex space-x-4 mb-6 text-sm font-medium">
               <div class="flex-auto flex space-x-4">
                 <Button variant="outline" className="text-accent hover:text-primary" onClick={() => window.open(project.github, '_blank')}>Ver Proyecto</Button>
-                <Button variant="outline" className="text-accent hover:text-primary" onClick={() => window.open(project.webapp, alert("Live no disponible"))}>Live</Button>
+                {project.webapp && (
+                  <Button
+                    variant="outline"
+                    className="text-accent hover:text-primary"
+                    onClick={() => window.open(project.webapp, '_blank')}
+                  >
+                    Live
+                  </Button>
+                )}
               </div>
               <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-white hover:text-accent border border-white hover:border-accent" type="button" aria-label="Like">
                 <FaGithub className='text-xl hover:text-accent'/>

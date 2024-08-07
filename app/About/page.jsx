@@ -11,6 +11,7 @@ import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/comp
 import { ScrollArea,  } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { RiFirebaseLine } from 'react-icons/ri';
 
 //Datos
 import data from "../../datos.json"
@@ -58,6 +59,7 @@ const About = () => {
     MdAlternateEmail: <MdAlternateEmail />,
     LuLanguages: <LuLanguages />,
     FaMobileAlt: <FaMobileAlt />,
+    RiFirebaseLine: <RiFirebaseLine  />,
     
   };
   const tecnologias = [
@@ -91,6 +93,7 @@ const About = () => {
     {nombre: "AWS", valor: "FaAws"},
     {nombre: "Figma", valor: "FaFigma"},
     {nombre: "Git", valor: "FaGit"},
+    {nombre: "Firebase", valor:"RiFirebaseLine"},
     
   ]
 
@@ -195,12 +198,11 @@ const About = () => {
             {/* skills */}
             <TabsContent value="skills" className="w-full ">
             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h2 className="text-4xl font-bold">{data.datos.education.title}</h2>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{data.datos.education.description}</p>
+                <h2 className="text-4xl font-bold">{data.datos.skillsInfo.title}</h2>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{data.datos.skillsInfo.description}</p>
             </div>
               <ScrollArea className="h-[800px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                  {/* ASIGNAR LOS ICONOS, SOLO RECIBE EL NOMBRE DEL COMPONENTE DESDE EL JSON */}
                 {data.datos.skillsList.map((skill, index) => {
                     return(
                       <div key={index} className="flex flex-col gap-4 h-auto">

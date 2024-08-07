@@ -15,3 +15,5 @@ modificar el json para anyadir nuevos datos /*OK*/
 * Gestionar iconos parte about de pagina About /* OK */
 
 * Problema no se muestran los iconos de skills /* OK */
+
+* En Work, anyadir un condicional si existe el proyecto en live para que aparezca el boton

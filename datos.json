@@ -394,6 +394,58 @@
 
    {
     "id": 9,
+    "title": "HayRuta",
+    "date": "2024 ",
+    "description":
+      "Proyecto de final de grado. Aplicación para gestionar de una manera eficaz el compartir coche con compañeros de trabajo. Realizada con React Native y utilizando Firebase como backend",
+    "image":
+      "https://github.com/misama484/hayruta/blob/master/ImagenesWeb/logo.png?raw=true",
+    "tags": [
+      "React Native",
+      "Firebase"
+    ],
+    "category": "android",
+    "github": "https://github.com/misama484/hayruta",
+    "webapp": "",
+    "member": [
+       {
+         "name": "Miguel Sanchez",
+         "img": "https://avatars.githubusercontent.com/u/86913656?v=4",
+         "linkedin": "https://www.linkedin.com/in/sanchezmartinezmiguel",
+         "github": "https://github.com/misama484"
+       }
+     ]
+   },
+
+   {
+    "id": 10,
+    "title": "Portfolio 2024",
+    "date": "2024 - En desarrollo",
+    "description":
+      "Portfolio personal desarrollado de nuevo con Next.js, TailwindCSS incorporando una funcionalidad de chat en linea.",
+    "image":
+      "https://github.com/misama484/takefood/blob/Variante1/foto.png?raw=true",
+    "tags": [
+      "React",
+      "TailwindCSS",
+      "Next.js"
+
+    ],
+    "category": "web",
+    "github": "https://github.com/misama484/takefood",
+    "webapp": "",
+    "member": [
+       {
+         "name": "Miguel Sanchez",
+         "img": "https://avatars.githubusercontent.com/u/86913656?v=4",
+         "linkedin": "https://www.linkedin.com/in/sanchezmartinezmiguel",
+         "github": "https://github.com/misama484"
+       }
+     ]
+   },
+
+   {
+    "id": 11,
     "title": "TakeFood",
     "date": "2024 - En desarrollo",
     "description":
@@ -416,8 +468,14 @@
        }
      ]
    }
+
+
 ],
 
+  "skillsInfo": {
+    "title": "Tecnologias",
+    "description": "Estas son las tecnologias con las que he trabajado y domino"
+  },
 
   "skillsList": [
     {

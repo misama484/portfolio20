@@ -9,10 +9,6 @@ const links = [
     path: "/",
   },
   {
-    name: "servcios",
-    path: "/Services",
-  },
-  {
     name: "sobre Mi",
     path: "/About",
   },
@@ -44,3 +40,10 @@ const Nav = () => {
 }
 
 export default Nav
+
+/* 
+  {
+    name: "servcios",
+    path: "/Services",
+  },
+*/
