@@ -294,7 +294,7 @@
     "title": "Portfolio personal",
     "date": "2022",
     "description":
-      "Codigo de este mismo portfolio, desarrollado en React, StyledComponents y MaterialUI",
+      "Portfolio 2022, desarrollado en React, StyledComponents y MaterialUI",
     "image":
       "https://github.com/misama484/PortFolioReact3/blob/main/CapturaPortfolio.png?raw=true",
     "tags": [
@@ -424,7 +424,7 @@
     "description":
       "Portfolio personal desarrollado de nuevo con Next.js, TailwindCSS incorporando una funcionalidad de chat en linea.",
     "image":
-      "https://github.com/misama484/takefood/blob/Variante1/foto.png?raw=true",
+      "https://github.com/misama484/portfolio20/blob/master/WebImages/FotoWeb.png?raw=true",
     "tags": [
       "React",
       "TailwindCSS",
@@ -432,7 +432,7 @@
 
     ],
     "category": "web",
-    "github": "https://github.com/misama484/takefood",
+    "github": "https://github.com/misama484/portfolio20",
     "webapp": "",
     "member": [
        {
