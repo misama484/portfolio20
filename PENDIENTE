@@ -16,4 +16,12 @@ modificar el json para anyadir nuevos datos /*OK*/
 
 * Problema no se muestran los iconos de skills /* OK */
 
-* En Work, anyadir un condicional si existe el proyecto en live para que aparezca el boton
+* En Work, anyadir un condicional si existe el proyecto en live para que aparezca el boton /* OK */
+
+* Trasladar declaraciones de iconos a un fichero separado para no duplicar codigo en distintos ficheros
+
+* Anyadir clave a proyectos en datos.json para marcar un proyecto como finalizado y que aparezca en las stats
+
+* Anyadir un boton para ver mas informacion de cada proyecto en la pagina de Works
+
+* Cerrar menu al pulsar fuera de el

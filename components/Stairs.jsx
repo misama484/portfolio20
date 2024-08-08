@@ -9,7 +9,7 @@ const stairAnimation = {
     top: "100%",
   },
   exit: {
-    top:["100%", "0%"],
+    top:["120%", "0%"],
   },
 }; 
 
