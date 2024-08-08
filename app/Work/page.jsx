@@ -309,7 +309,7 @@ const Work = () => {
       animate = {{ opacity: 1, transition:{ delay:1.4, duration: 0.4, ease:"easeIn"} }}
       className="min-h-[80vh] flex flex-cols-2 justify-center py-12 xl:px-0"
     >
-      <div className="border grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20 mb-40">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mx-20">
        {reverseJson.map((project, index) => {
           return(
             <ProjectCard key={index} project = {project} />

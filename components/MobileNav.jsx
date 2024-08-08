@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { CiMenuFries } from 'react-icons/ci';
 import Typewriter from 'typewriter-effect';
+import { useEffect, useRef, useState } from 'react';
 
 
 const links = [
@@ -28,9 +29,33 @@ const links = [
 
 const MobileNav = () => {
   const pathName = usePathname();
+  const menuRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClickOutside = (event) => {
+    if(menuRef.current && !menuRef.current.contains(event.target)){
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if(isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return ()=> {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  },[isOpen])
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  }
+
   return (
-    <Sheet>
-      <SheetTrigger className='flex justify-center items-center'>
+    <Sheet isOpen={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger className='flex justify-center items-center' onClick={() => setIsOpen(!isOpen)}>
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent className='flex flex-col'>
@@ -52,9 +77,10 @@ const MobileNav = () => {
         <nav className='flex flex-col justify-center items-center gap-8'>
           {links.map((link, index) => {
             return (
+              <a key={index} onClick={handleLinkClick}>
               <Link key={index} href={link.path} className={`${link.path === pathName && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}>
                 {link.name}
-              </Link>
+              </Link></a>
             )
           })}
         </nav>
